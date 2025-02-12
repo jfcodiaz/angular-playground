@@ -1,0 +1,16 @@
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: docker/node/ng-17/Dockerfile
+    container_name: ${APP_PREFIX}17-node
+    hostname: ${APP_PREFIX}17-node
+    volumes:
+      - .:/app
+      - ./docker/config/dev/ssh:/root/.ssh/
+      - ./docker/config/dev/git/.gitconfig:/root/.gitconfig
+    working_dir: /app/code/ng-17
+    ports:
+      - "${APP1_PORT}:4200"
+      - "${APP1_LIVE_RELOAD_PORT}:49153"
+    command: tail -f /dev/null

@@ -1,0 +1,8 @@
+{
+    "explorer.compactFolders": false,
+    "editor.tabSize": 2,
+    "files.exclude": {                 // Ocultar archivos/carpetas en el explorador
+        "node_modules": true,
+        ".git": true,
+    }
+}
